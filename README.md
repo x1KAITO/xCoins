@@ -1,4 +1,4 @@
-#local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("ᴋᴀɪᴛᴏ!", "Serpent")
 local Tab = Window:NewTab("Farm")
 local Section = Tab:NewSection("Farm Coin")
