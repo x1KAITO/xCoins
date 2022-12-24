@@ -3,8 +3,8 @@ local Window = Library.CreateLib("ᴋᴀɪᴛᴏ!", "Serpent")
 local Tab = Window:NewTab("Farm")
 local Section = Tab:NewSection("Farm Coin")
 Section:NewToggle("Teleport Farm", "ToggleInfo", function(state)
-_G.Farm = state
-while _G.Farm do wait()  
+_G.AutoFarm = state
+while _G.AutoFarm do wait()  
     
 for i,v in pairs(game:GetService("Workspace").Coins.VIP:GetDescendants()) do
     if v.Name == "TremorON" then
@@ -209,7 +209,19 @@ game:GetService("ReplicatedStorage").Remotes.Skill:FireServer("Thunder")
 end
 end)
 
+
 local Section = Tab:NewSection("Set value")
+
+Section:NewButton("Rejoin", "", function()
+    local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+ 
+
+ts:Teleport(game.PlaceId, p)
+end)
+
 Section:NewColorPicker("Color Text", "Color Info", Color3.fromRGB(0,0,0), function(color)
     print(color)
 end)
